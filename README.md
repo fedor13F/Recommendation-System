@@ -122,4 +122,23 @@
 ## Структура репозитория
 
 ```text
-to be added
+.
+├── README.md
+├── candgens/                        # Кандидат-генерация
+│   ├── candgen_models.py            # Классы нейросетевых моделей (Two-Tower, MF)
+│   ├── i2i/                         # Item-to-Item (ноутбук и артефакты)
+│   ├── als/                         # ALS (ноутбук и артефакты)
+│   ├── 2tower/                      # Two-Tower и MF (ноутбук и веса)
+│   └── recsys-lavka-ysda-union.ipynb # Объединение кандидатов от разных источников
+├── ranking/                         # Этап ранжирования (CatBoost)
+│   ├── ranking-create-candgens-features.ipynb  # Генерация фичей от кандгенов
+│   ├── ranking-counter-features.ipynb          # Счетчики (user, item, user-item)
+│   ├── ranking-create-raw-feats.ipynb          # Базовые контекстные фичи
+│   ├── ranking-v5.ipynb             # Undersampled датасет + косинусы
+│   ├── ranking-v7.ipynb             # Эксперименты с фичами
+│   ├── ranking-v9.ipynb             # Еще эксперименты с фичами
+│   └── ranking.ipynb                # Финальный пайплайн и ансамбль
+├── utils/                           # Вспомогательные скрипты
+│   └── metrics.py                   # Реализация метрик (NDCG, Recall и т.д.)
+├── recsys-lavka-ysda-baseline.ipynb # Бейзлайн (TopPop)
+└── recsys-lavka-ysda-eda.ipynb      # Разведочный анализ данных
